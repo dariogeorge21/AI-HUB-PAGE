@@ -14,7 +14,8 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    width: 95%;
+    max-width: 1800px;
     margin: 0 auto;
     padding: 20px;
     flex: 1;
@@ -23,7 +24,7 @@ body {
 header {
     text-align: center;
     padding: 40px 0;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 header {
@@ -32,22 +33,61 @@ header {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.tools-grid {
+.category-nav {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.category-btn {
+    background: #3A506B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+    border: 2px solid transparent;
+}
+
+.category-btn:hover {
+    background: #19404e;
+    transform: translateY(-2px);
+}
+
+.category-btn.active {
+    background: #e74c3c;
+    border-color: #fff;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    justify-content: space-evenly
+    justify-content: center;
+    align-items: stretch;
 }
 
 .tool-card {
-    background:#3A506B;
-    width: 280px;
+    background: #3A506B;
     padding: 20px;
     border-radius: 15px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.tool-card[style*="display: none"] {
+    display: none !important;
 }
 
 .tool-card:hover {

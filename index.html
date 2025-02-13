@@ -12,142 +12,315 @@
             <h1>AI Toolkit Hub</h1>
         </header>
 
+        <nav class="category-nav">
+            <button class="category-btn active" data-category="all">All Tools</button>
+            <button class="category-btn" data-category="coding">Coding</button>
+            <button class="category-btn" data-category="writing">Writing & Content</button>
+            <button class="category-btn" data-category="research">Research</button>
+            <button class="category-btn" data-category="mathematics">Mathematics</button>
+            <button class="category-btn" data-category="image">Image Generation</button>
+            <button class="category-btn" data-category="video">Video & Audio</button>
+            <button class="category-btn" data-category="productivity">Productivity</button>
+            <button class="category-btn" data-category="framework">Frameworks & ML</button>
+        </nav>
+
         <div class="tools-grid">
             <!-- ChatGPT -->
-            <a href="https://chat.openai.com" target="_blank" class="tool-card">
+            <a href="https://chat.openai.com" target="_blank" class="tool-card" data-categories="writing,productivity">
                 <div class="tool-type">Chatbot</div>
-                <img src="chatgpt.jpg" alt="ChatGPT" class="tool-image">
+                <img src="images/chatgpt.jpg" alt="ChatGPT" class="tool-image">
                 <h3 class="tool-name">ChatGPT</h3>
                 <p class="tool-desc">Advanced conversational AI for natural language processing and generation.</p>
             </a>
 
             <!-- DeepSeek -->
-            <a href="https://deepseek.com" target="_blank" class="tool-card">
+            <a href="https://deepseek.com" target="_blank" class="tool-card" data-categories="research,productivity">
                 <div class="tool-type">Search</div>
-                <img src="deepseek.webp" alt="DeepSeek" class="tool-image">
+                <img src="images/deepseek.webp" alt="DeepSeek" class="tool-image">
                 <h3 class="tool-name">DeepSeek</h3>
                 <p class="tool-desc">AI-powered search engine for deep web exploration.</p>
             </a>
 
             <!-- Copilot -->
-            <a href="https://copilot.microsoft.com" target="_blank" class="tool-card">
+            <a href="https://copilot.microsoft.com" target="_blank" class="tool-card" data-categories="coding">
                 <div class="tool-type">Coding</div>
-                <img src="Copilot-Logo.png" alt="Copilot" class="tool-image">
+                <img src="images/Copilot-Logo.png" alt="Copilot" class="tool-image">
                 <h3 class="tool-name">Copilot</h3>
                 <p class="tool-desc">AI-powered coding assistant for developers.</p>
             </a>
 
             <!-- TensorFlow -->
-            <a href="https://tensorflow.org" target="_blank" class="tool-card">
+            <a href="https://tensorflow.org" target="_blank" class="tool-card" data-categories="framework,coding">
                 <div class="tool-type">ML Framework</div>
-                <img src="tensorflow.png" alt="TensorFlow" class="tool-image">
+                <img src="images/tensorflow.png" alt="TensorFlow" class="tool-image">
                 <h3 class="tool-name">TensorFlow</h3>
                 <p class="tool-desc">Open-source machine learning framework by Google.</p>
             </a>
 
             <!-- MidJourney -->
-            <a href="https://midjourney.com" target="_blank" class="tool-card">
+            <a href="https://midjourney.com" target="_blank" class="tool-card" data-categories="image">
                 <div class="tool-type">Image Generation</div>
-                <img src="midjourney.png" alt="MidJourney" class="tool-image">
+                <img src="images/midjourney.png" alt="MidJourney" class="tool-image">
                 <h3 class="tool-name">MidJourney</h3>
                 <p class="tool-desc">AI tool for generating stunning images from text prompts.</p>
             </a>
 
             <!-- Notion -->
-            <a href="https://notion.so" target="_blank" class="tool-card">
+            <a href="https://notion.so" target="_blank" class="tool-card" data-categories="productivity,writing">
                 <div class="tool-type">Productivity</div>
-                <img src="notion.png" alt="Notion" class="tool-image">
+                <img src="images/notion.png" alt="Notion" class="tool-image">
                 <h3 class="tool-name">Notion</h3>
                 <p class="tool-desc">All-in-one workspace for notes, tasks, and collaboration.</p>
             </a>
 
             <!-- Speechmatics -->
-            <a href="https://speechmatics.com" target="_blank" class="tool-card">
+            <a href="https://speechmatics.com" target="_blank" class="tool-card" data-categories="video">
                 <div class="tool-type">Speech-to-Text</div>
-                <img src="speechmatics.jpg" alt="Speechmatics" class="tool-image">
+                <img src="images/speechmatics.jpg" alt="Speechmatics" class="tool-image">
                 <h3 class="tool-name">Speechmatics</h3>
                 <p class="tool-desc">AI-powered speech recognition and transcription.</p>
             </a>
 
             <!-- Tabnine -->
-            <a href="https://tabnine.com" target="_blank" class="tool-card">
+            <a href="https://tabnine.com" target="_blank" class="tool-card" data-categories="coding">
                 <div class="tool-type">Coding</div>
-                <img src="tabnine.png" alt="Tabnine" class="tool-image">
+                <img src="images/tabnine.png" alt="Tabnine" class="tool-image">
                 <h3 class="tool-name">Tabnine</h3>
                 <p class="tool-desc">AI-powered code completion tool for developers.</p>
             </a>
 
             <!-- Descript -->
-            <a href="https://descript.com" target="_blank" class="tool-card">
+            <a href="https://descript.com" target="_blank" class="tool-card" data-categories="video">
                 <div class="tool-type">Video Editing</div>
-                <img src="descript.png" alt="Descript" class="tool-image">
+                <img src="images/descript.png" alt="Descript" class="tool-image">
                 <h3 class="tool-name">Descript</h3>
                 <p class="tool-desc">AI-powered video and audio editing tool.</p>
             </a>
 
             <!-- GitHub Copilot -->
-            <a href="https://github.com/features/copilot" target="_blank" class="tool-card">
+            <a href="https://github.com/features/copilot" target="_blank" class="tool-card" data-categories="coding">
                 <div class="tool-type">Coding</div>
-                <img src="github copilot.png" alt="GitHub Copilot" class="tool-image">
+                <img src="images/github copilot.png" alt="GitHub Copilot" class="tool-image">
                 <h3 class="tool-name">GitHub Copilot</h3>
                 <p class="tool-desc">AI pair programmer for faster coding.</p>
             </a>
 
             <!-- Gemini -->
-            <a href="https://gemini.com" target="_blank" class="tool-card">
+            <a href="https://gemini.com" target="_blank" class="tool-card" data-categories="writing,productivity,research">
                 <div class="tool-type">Multimodal AI</div>
-                <img src="gemini.png" alt="Gemini" class="tool-image">
+                <img src="images/gemini.png" alt="Gemini" class="tool-image">
                 <h3 class="tool-name">Gemini</h3>
                 <p class="tool-desc">Multimodal AI for text, image, and video understanding.</p>
             </a>
 
             <!-- DALL-E -->
-            <a href="https://openai.com/dall-e" target="_blank" class="tool-card">
+            <a href="https://openai.com/dall-e" target="_blank" class="tool-card" data-categories="image">
                 <div class="tool-type">Image Generation</div>
-                <img src="dall.e.png" alt="DALL-E" class="tool-image">
+                <img src="images/dall.e.png" alt="DALL-E" class="tool-image">
                 <h3 class="tool-name">DALL-E</h3>
                 <p class="tool-desc">AI tool for generating images from text descriptions.</p>
             </a>
 
             <!-- Eleven Labs -->
-            <a href="https://elevenlabs.io" target="_blank" class="tool-card">
+            <a href="https://elevenlabs.io" target="_blank" class="tool-card" data-categories="video">
                 <div class="tool-type">Voice Synthesis</div>
-                <img src="eleven_labs.png" alt="Eleven Labs" class="tool-image">
+                <img src="images/eleven_labs.png" alt="Eleven Labs" class="tool-image">
                 <h3 class="tool-name">Eleven Labs</h3>
                 <p class="tool-desc">AI-powered voice synthesis and text-to-speech.</p>
             </a>
 
             <!-- Claude -->
-            <a href="https://claude.ai" target="_blank" class="tool-card">
+            <a href="https://claude.ai" target="_blank" class="tool-card" data-categories="writing,productivity,research">
                 <div class="tool-type">Chatbot</div>
-                <img src="claude.png" alt="Claude" class="tool-image">
+                <img src="images/claude.png" alt="Claude" class="tool-image">
                 <h3 class="tool-name">Claude</h3>
                 <p class="tool-desc">AI assistant for natural language tasks.</p>
             </a>
 
             <!-- Codeium -->
-            <a href="https://codeium.com" target="_blank" class="tool-card">
+            <a href="https://codeium.com" target="_blank" class="tool-card" data-categories="coding">
                 <div class="tool-type">Coding</div>
-                <img src="codeium.jpg" alt="Codeium" class="tool-image">
+                <img src="images/codeium.jpg" alt="Codeium" class="tool-image">
                 <h3 class="tool-name">Codeium</h3>
                 <p class="tool-desc">AI-powered code completion and search.</p>
             </a>
 
             <!-- Jasper -->
-            <a href="https://jasper.ai" target="_blank" class="tool-card">
+            <a href="https://jasper.ai" target="_blank" class="tool-card" data-categories="writing">
                 <div class="tool-type">Content Creation</div>
-                <img src="jasper.jpg" alt="Jasper" class="tool-image">
+                <img src="images/jasper.jpg" alt="Jasper" class="tool-image">
                 <h3 class="tool-name">Jasper</h3>
                 <p class="tool-desc">AI writing assistant for content creation.</p>
             </a>
 
             <!-- Adobe Sensei -->
-            <a href="https://adobe.com/sensei" target="_blank" class="tool-card">
+            <a href="https://adobe.com/sensei" target="_blank" class="tool-card" data-categories="image,video">
                 <div class="tool-type">Creative AI</div>
-                <img src="Adobe-Sensei.png" alt="Adobe Sensei" class="tool-image">
+                <img src="images/Adobe-Sensei.png" alt="Adobe Sensei" class="tool-image">
                 <h3 class="tool-name">Adobe Sensei</h3>
                 <p class="tool-desc">AI and machine learning for creative workflows.</p>
             </a>
+
+            <!-- Anthropic -->
+            <a href="https://anthropic.com" target="_blank" class="tool-card" data-categories="research,framework">
+                <div class="tool-type">AI Research</div>
+                <img src="images/anthropic.png" alt="Anthropic" class="tool-image">
+                <h3 class="tool-name">Anthropic</h3>
+                <p class="tool-desc">Advanced AI research and development company.</p>
+            </a>
+
+            <!-- Stable Diffusion -->
+            <a href="https://stability.ai" target="_blank" class="tool-card" data-categories="image">
+                <div class="tool-type">Image Generation</div>
+                <img src="images/stability.jpg" alt="Stable Diffusion" class="tool-image">
+                <h3 class="tool-name">Stable Diffusion</h3>
+                <p class="tool-desc">Open-source AI image generation model.</p>
+            </a>
+
+            <!-- RunwayML -->
+            <a href="https://runway.ml" target="_blank" class="tool-card" data-categories="video">
+                <div class="tool-type">Video Generation</div>
+                <img src="images/runway.png" alt="RunwayML" class="tool-image">
+                <h3 class="tool-name">RunwayML</h3>
+                <p class="tool-desc">AI-powered video editing and generation.</p>
+            </a>
+
+            <!-- Hugging Face -->
+            <a href="https://huggingface.co" target="_blank" class="tool-card" data-categories="framework,coding">
+                <div class="tool-type">ML Platform</div>
+                <img src="images/hugging.png" alt="Hugging Face" class="tool-image">
+                <h3 class="tool-name">Hugging Face</h3>
+                <p class="tool-desc">Platform for sharing and deploying ML models.</p>
+            </a>
+
+            <!-- Replicate -->
+            <a href="https://replicate.com" target="_blank" class="tool-card" data-categories="framework">
+                <div class="tool-type">AI Deployment</div>
+                <img src="images/replicate.png" alt="Replicate" class="tool-image">
+                <h3 class="tool-name">Replicate</h3>
+                <p class="tool-desc">Platform for running AI models in the cloud.</p>
+            </a>
+
+            <!-- Perplexity -->
+            <a href="https://perplexity.ai" target="_blank" class="tool-card" data-categories="research">
+                <div class="tool-type">AI Search</div>
+                <img src="images/perplexity.png" alt="Perplexity" class="tool-image">
+                <h3 class="tool-name">Perplexity</h3>
+                <p class="tool-desc">AI-powered search engine with citations.</p>
+            </a>
+
+            <!-- Synthesia -->
+            <a href="https://synthesia.io" target="_blank" class="tool-card" data-categories="video">
+                <div class="tool-type">Video AI</div>
+                <img src="images/synthesia.png" alt="Synthesia" class="tool-image">
+                <h3 class="tool-name">Synthesia</h3>
+                <p class="tool-desc">AI video creation from text.</p>
+            </a>
+
+            <!-- Grammarly -->
+            <a href="https://grammarly.com" target="_blank" class="tool-card" data-categories="writing">
+                <div class="tool-type">Writing</div>
+                <img src="images/grammarly.jpg" alt="Grammarly" class="tool-image">
+                <h3 class="tool-name">Grammarly</h3>
+                <p class="tool-desc">AI writing assistant for better communication.</p>
+            </a>
+
+            <!-- Cohere -->
+            <a href="https://cohere.ai" target="_blank" class="tool-card" data-categories="framework,writing">
+                <div class="tool-type">NLP</div>
+                <img src="images/cohere.webp" alt="Cohere" class="tool-image">
+                <h3 class="tool-name">Cohere</h3>
+                <p class="tool-desc">Natural language processing APIs for developers.</p>
+            </a>
+
+            <!-- Quillbot -->
+            <a href="https://quillbot.com" target="_blank" class="tool-card" data-categories="writing">
+                <div class="tool-type">Writing</div>
+                <img src="images/quillbot.png" alt="Quillbot" class="tool-image">
+                <h3 class="tool-name">Quillbot</h3>
+                <p class="tool-desc">AI paraphrasing tool for better writing and research.</p>
+            </a>
+
+            <!-- Zotero -->
+            <a href="https://zotero.org" target="_blank" class="tool-card" data-categories="research">
+                <div class="tool-type">Research</div>
+                <img src="images/zotero.png" alt="Zotero" class="tool-image">
+                <h3 class="tool-name">Zotero</h3>
+                <p class="tool-desc">AI-enhanced reference management and research tool.</p>
+            </a>
+
+            <!-- Mathway -->
+            <a href="https://mathway.com" target="_blank" class="tool-card" data-categories="mathematics">
+                <div class="tool-type">Mathematics</div>
+                <img src="images/mathway.png" alt="Mathway" class="tool-image">
+                <h3 class="tool-name">Mathway</h3>
+                <p class="tool-desc">AI-powered math problem solver with step-by-step solutions.</p>
+            </a>
+
+            <!-- Wolfram Alpha -->
+            <a href="https://wolframalpha.com" target="_blank" class="tool-card" data-categories="mathematics,research">
+                <div class="tool-type">Computational</div>
+                <img src="images/wolfram.webp" alt="Wolfram Alpha" class="tool-image">
+                <h3 class="tool-name">Wolfram Alpha</h3>
+                <p class="tool-desc">AI computational knowledge engine for academics.</p>
+            </a>
+
+            <!-- Mendeley -->
+            <a href="https://mendeley.com" target="_blank" class="tool-card" data-categories="research">
+                <div class="tool-type">Research</div>
+                <img src="images/mendeley.webp" alt="Mendeley" class="tool-image">
+                <h3 class="tool-name">Mendeley</h3>
+                <p class="tool-desc">AI-powered research paper management and discovery.</p>
+            </a>
+
+            <!-- Otter.ai -->
+            <a href="https://otter.ai" target="_blank" class="tool-card" data-categories="productivity,video">
+                <div class="tool-type">Note-Taking</div>
+                <img src="images/otter.png" alt="Otter.ai" class="tool-image">
+                <h3 class="tool-name">Otter.ai</h3>
+                <p class="tool-desc">AI transcription for lectures and meetings.</p>
+            </a>
+
+            <!-- Photomath -->
+            <a href="https://photomath.com" target="_blank" class="tool-card" data-categories="mathematics">
+                <div class="tool-type">Mathematics</div>
+                <img src="images/photomath.webp" alt="Photomath" class="tool-image">
+                <h3 class="tool-name">Photomath</h3>
+                <p class="tool-desc">Camera-based math problem solver with explanations.</p>
+            </a>
+
+            <!-- Scholarcy -->
+            <a href="https://scholarcy.com" target="_blank" class="tool-card" data-categories="research">
+                <div class="tool-type">Research</div>
+                <img src="images/scholarcy.jpg" alt="Scholarcy" class="tool-image">
+                <h3 class="tool-name">Scholarcy</h3>
+                <p class="tool-desc">AI research paper summarizer and analyzer.</p>
+            </a>
+
+            <!-- Writefull -->
+            <a href="https://writefull.com" target="_blank" class="tool-card" data-categories="writing,research">
+                <div class="tool-type">Academic Writing</div>
+                <img src="images/writefull.jpg" alt="Writefull" class="tool-image">
+                <h3 class="tool-name">Writefull</h3>
+                <p class="tool-desc">AI writing assistant for academic papers.</p>
+            </a>
+
+            <!-- Research Rabbit -->
+            <a href="https://researchrabbit.ai" target="_blank" class="tool-card" data-categories="research">
+                <div class="tool-type">Research</div>
+                <img src="images/rabbit.png" alt="Research Rabbit" class="tool-image">
+                <h3 class="tool-name">Research Rabbit</h3>
+                <p class="tool-desc">AI-powered literature discovery and mapping.</p>
+            </a>
+
+            <!-- Consensus -->
+            <a href="https://consensus.app" target="_blank" class="tool-card" data-categories="research">
+                <div class="tool-type">Research</div>
+                <img src="images/consensus.png" alt="Consensus" class="tool-image">
+                <h3 class="tool-name">Consensus</h3>
+                <p class="tool-desc">AI-powered search engine for scientific papers.</p>
+            </a>
+
         </div>
     </div>
 
@@ -155,8 +328,9 @@
         <div>
             <p>Designed by Dario George</p><br>
         </div>
-        <div #>
+        <div>
             <p id="refer"><a id="ref" href="mailto:edu.dariogeorge21@gmail.com">Email Us</a> | <a href="https://github.com/dariogeorge21" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/dariogeorge21" target="_blank">LinkedIn</a></p></div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
