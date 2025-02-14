@@ -6,8 +6,8 @@
 }
 
 body {
-    background: linear-gradient(135deg, #bae7dc, #4eafae);
-    color: #fff;
+    background: linear-gradient(135deg, #1a1d23, #1a1d23);
+    color: #e2e8f0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -29,54 +29,66 @@ header {
 
 header h1 {
     font-size: 45px;
-    color: #e74c3c;
+    color: #3b82f6;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
-    
+
 .category-nav {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 10px;
     margin-bottom: 30px;
-    padding: 0 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.category-nav::-webkit-scrollbar {
+    display: none;
 }
 
 .category-btn {
-    background: #3A506B;
-    color: white;
+    background: rgba(30, 41, 59, 0.7);
+    color: #e2e8f0;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 0.9em;
-    border: 2px solid transparent;
+    font-size: 1em;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    white-space: nowrap;
+    flex-shrink: 0;
+    backdrop-filter: blur(8px);
 }
 
 .category-btn:hover {
-    background: #19404e;
+    background: rgba(59, 130, 246, 0.2);
     transform: translateY(-2px);
+    border-color: rgba(148, 163, 184, 0.2);
 }
 
 .category-btn.active {
-    background: #e74c3c;
-    border-color: #fff;
+    background: #3b82f6;
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
     justify-content: center;
     align-items: stretch;
 }
 
 .tool-card {
-    background: #3A506B;
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
     padding: 20px;
-    border-radius: 15px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 20px;
+    transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -84,6 +96,7 @@ header h1 {
     display: flex;
     flex-direction: column;
     text-decoration: none;
+    border: 1px solid rgba(148, 163, 184, 0.1);
 }
 
 .tool-card[style*="display: none"] {
@@ -91,49 +104,59 @@ header h1 {
 }
 
 .tool-card:hover {
-    transform: scale(1.05);
-    background: #19404e;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    background: rgba(30, 41, 59, 0.9);
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.3);
 }
 
 .tool-image {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.1);
 }
 
 .tool-type {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #c6c1e1;
-    padding: 5px 10px;
+    top: 28px;
+    right: 28px;
+    background: rgba(59, 130, 246, 0.2);
+    color: #93c5fd;
+    padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.8em;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .tool-name {
-    margin: 15px 0 10px;
-    color: #ffffff;
+    margin: 0 0 8px 0;
+    color: #e2e8f0;
     font-size: 1.4em;
+    font-weight: 600;
 }
 
 .tool-desc {
-    color: #ccc;
-    font-size: 0.9em;
-    line-height: 1.4;
+    color: #94a3b8;
+    font-size: 0.95em;
+    line-height: 1.5;
 }
 
 footer {
     text-align: center;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(8px);
     font-size: 0.9em;
-    color: #ccc;
+    color: #94a3b8;
     margin-top: auto;
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -156,37 +179,43 @@ footer {
 
     .category-nav {
         padding: 0 10px;
-        gap: 8px;
+        gap: 12px;
+        margin: 0 -10px 20px -10px;
+        padding: 0 10px 5px 10px;
     }
 
     .category-btn {
-        padding: 8px 15px;
-        font-size: 0.85em;
-        white-space: nowrap;
+        padding: 10px 20px;
+        font-size: 0.9em;
     }
 
     .tools-grid {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 15px;
-        padding: 0 8px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+        padding: 0;
     }
 
     .tool-card {
-        padding: 12px;
-        transform-origin: center;
+        padding: 16px;
     }
 
     .tool-image {
-        height: 150px;
+        height: 160px;
+    }
+
+    .tool-type {
+        top: 24px;
+        right: 24px;
+        padding: 4px 10px;
+        font-size: 0.75em;
     }
 
     .tool-name {
         font-size: 1.2em;
-        margin: 12px 0 8px;
     }
 
     .tool-desc {
-        font-size: 0.85em;
+        font-size: 0.9em;
     }
 }
 
@@ -277,5 +306,60 @@ footer a {
     color: #fff;
     text-decoration: none;
     margin-left: 5px;
-    
+}
+
+/* Loading Spinner Styles */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
+    }
+}
+
+#loading-spinner .border-blue-500 {
+    animation: glow 2s ease-in-out infinite;
+}
+
+#loading-spinner .bg-blue-500 {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+/* Fade in animation for the spinner */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#loading-spinner {
+    animation: fadeInScale 0.3s ease-out;
+}
+
+/* Custom gradient animation for the spinning ring */
+@keyframes gradientSpin {
+    0% {
+        transform: rotate(0deg);
+        border-top-color: #3b82f6;
+        border-right-color: #60a5fa;
+    }
+    50% {
+        border-top-color: #60a5fa;
+        border-right-color: #93c5fd;
+    }
+    100% {
+        transform: rotate(360deg);
+        border-top-color: #3b82f6;
+        border-right-color: #60a5fa;
+    }
+}
+
+#loading-spinner .animate-spin {
+    animation: gradientSpin 1.5s linear infinite;
 }
