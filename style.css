@@ -27,12 +27,12 @@ header {
     margin-bottom: 20px;
 }
 
-header {
+header h1 {
     font-size: 45px;
     color: #e74c3c;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
-
+    
 .category-nav {
     display: flex;
     flex-wrap: wrap;
@@ -137,25 +137,137 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    header {
+        padding: 20px 0;
+    }
+
+    header h1 {
+        font-size: 38px;
+    }
+
     h1 {
-        font-size: 2.5em;
+        font-size: 2.2em;
+    }
+
+    .category-nav {
+        padding: 0 10px;
+        gap: 8px;
+    }
+
+    .category-btn {
+        padding: 8px 15px;
+        font-size: 0.85em;
+        white-space: nowrap;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 15px;
+        padding: 0 8px;
     }
 
     .tool-card {
-        width: 100%;
-        max-width: 400px;
+        padding: 12px;
+        transform-origin: center;
+    }
+
+    .tool-image {
+        height: 150px;
+    }
+
+    .tool-name {
+        font-size: 1.2em;
+        margin: 12px 0 8px;
+    }
+
+    .tool-desc {
+        font-size: 0.85em;
     }
 }
 
 @media (max-width: 480px) {
+    .container {
+        width: 92%;
+        padding: 8px;
+    }
+
+    header {
+        padding: 15px 0;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
     h1 {
-        font-size: 2em;
+        font-size: 1.8em;
+    }
+
+    .category-nav {
+        padding: 0 5px;
+        gap: 6px;
+        margin-bottom: 20px;
+    }
+
+    .category-btn {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+        padding: 0 5px;
+    }
+
+    .tool-card {
+        padding: 10px;
+    }
+
+    .tool-image {
+        height: 130px;
     }
 
     .tool-type {
         font-size: 0.7em;
+        padding: 4px 8px;
+    }
+
+    .tool-name {
+        font-size: 1.1em;
+    }
+
+    .tool-desc {
+        font-size: 0.8em;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 5px;
+        padding: 8px;
+        font-size: 0.8em;
     }
 }
+
+@media (hover: none) {
+    .tool-card:hover {
+        transform: scale(1.02);
+    }
+
+    .category-btn {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .category-btn:active {
+        background: #19404e;
+    }
+}
+
 footer a {
     color: #fff;
     text-decoration: none;
