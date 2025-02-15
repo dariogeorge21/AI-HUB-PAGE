@@ -28,7 +28,12 @@
     </div>
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <header class="text-center mb-12">
+        <header class="text-center mb-12 relative">
+            <button id="theme-toggle" class="absolute top-0 right-0 p-2 rounded-full bg-slate-700/50 hover:bg-slate-600/50 transition-all duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
             
             <h1 class="text-4xl md:text-5xl font-bold text-blue-400 drop-shadow-[0_2px_8px_rgba(96,165,250,0.5)] transition-all duration-300 hover:drop-shadow-[0_4px_12px_rgba(96,165,250,0.6)]">
                 AI Toolkit Hub
@@ -380,36 +385,37 @@
     </div>
 
     <!-- Tool Details Container -->
-    <div id="toolDetails" class="fixed inset-0 bg-black opacity-0 transition-all duration-300 ease-in-out flex items-center justify-center z-50 pointer-events-none">
-        <div class="bg-slate-800 rounded-xl p-6 max-w-md w-full mx-4 relative border border-slate-700 shadow-lg scale-50 rotate-12 opacity-0 transition-all duration-500 ease-out">
-            <button onclick="closeDetails()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors duration-200 hover:rotate-90">
+    <div id="toolDetails" class="fixed inset-0 bg-black/50 opacity-0 transition-all duration-300 ease-in-out flex items-center justify-center z-[100] pointer-events-none">
+        <div class="modal-content bg-slate-800 rounded-xl p-6 max-w-md w-full mx-4 relative border border-slate-700 shadow-lg scale-50 rotate-12 opacity-0 transition-all duration-500 ease-out">
+            <button onclick="closeDetails()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            <div class="transform transition-all duration-500 ease-out">
-                <h2 id="toolName" class="text-2xl font-bold text-blue-400 mb-4"></h2>
-                <div id="toolType" class="inline-block px-3 py-1 rounded-full text-sm font-medium bg-blue-500/20 text-blue-400 mb-4"></div>
-                <div class="space-y-4">
-                    <div class="transition-all duration-300 ease-out">
-                        <h3 class="text-lg font-semibold text-slate-200 mb-2">Pricing</h3>
-                        <p id="toolPricing" class="text-slate-300"></p>
-                    </div>
-                    <div class="transition-all duration-300 ease-out">
-                        <h3 class="text-lg font-semibold text-slate-200 mb-2">Main Use</h3>
-                        <p id="toolMainUse" class="text-slate-300"></p>
-                    </div>
-                    <div class="transition-all duration-300 ease-out">
-                        <h3 class="text-lg font-semibold text-slate-200 mb-2">Other Uses</h3>
-                        <p id="toolOtherUses" class="text-slate-300"></p>
-                    </div>
-                    <div class="transition-all duration-300 ease-out">
-                        <h3 class="text-lg font-semibold text-slate-200 mb-2">User Experience</h3>
-                        <p id="toolUserExperience" class="text-slate-300"></p>
-                    </div>
-                    <a id="toolLink" href="#" target="_blank" 
-                       class="inline-block w-full text-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:-rotate-1 hover:shadow-lg">
+            <h2 id="toolName" class="text-2xl font-bold mb-4 text-white"></h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-gray-400 text-sm font-medium mb-1">Pricing</h3>
+                    <p id="toolPricing" class="text-white"></p>
+                </div>
+                <div>
+                    <h3 class="text-gray-400 text-sm font-medium mb-1">Main Use</h3>
+                    <p id="toolMainUse" class="text-white"></p>
+                </div>
+                <div>
+                    <h3 class="text-gray-400 text-sm font-medium mb-1">Other Uses</h3>
+                    <p id="toolOtherUses" class="text-white"></p>
+                </div>
+                <div>
+                    <h3 class="text-gray-400 text-sm font-medium mb-1">User Experience</h3>
+                    <p id="toolUserExperience" class="text-white"></p>
+                </div>
+                <div class="pt-4">
+                    <a id="toolLink" href="#" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
                         Visit Website
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -690,7 +696,7 @@
 
     function showDetails(toolName) {
         const modal = document.getElementById('toolDetails');
-        const modalContent = modal.querySelector('.bg-slate-800');
+        const modalContent = modal.querySelector('.modal-content');
         const data = toolsData[toolName] || {
             pricing: 'Contact for pricing',
             mainUse: 'Information not available',
@@ -709,9 +715,7 @@
 
         // Show modal with animation
         modal.classList.remove('opacity-0', 'pointer-events-none');
-        modal.classList.add('bg-opacity-50');
         
-        // Add a slight delay before showing the content for a more dramatic effect
         setTimeout(() => {
             modalContent.classList.remove('scale-50', 'rotate-12', 'opacity-0');
         }, 50);
@@ -721,14 +725,12 @@
 
     function closeDetails() {
         const modal = document.getElementById('toolDetails');
-        const modalContent = modal.querySelector('.bg-slate-800');
+        const modalContent = modal.querySelector('.modal-content');
 
-        // Hide modal with animation
         modalContent.classList.add('scale-50', 'rotate-12', 'opacity-0');
         
         setTimeout(() => {
             modal.classList.add('opacity-0', 'pointer-events-none');
-            modal.classList.remove('bg-opacity-50');
             document.body.style.overflow = '';
         }, 300);
     }
