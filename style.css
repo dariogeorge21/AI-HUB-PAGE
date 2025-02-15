@@ -435,6 +435,8 @@ footer p {
         margin: 0 -10px 20px -10px;
         width: calc(100% + 20px);
         border-radius: 0;
+        border: none;
+        background: rgba(30, 41, 59, 0.9);
     }
 
     .category-nav::before {
