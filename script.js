@@ -22,18 +22,18 @@ const initScrollProgress = () => {
     calculateScrollProgress();
 };
 
-// Loading Spinner Functions
-const showSpinner = () => {
-    const spinner = document.getElementById('loading-spinner');
-    if (spinner) {
-        spinner.style.display = 'flex';
+// Loading Skeleton Functions
+const showSkeleton = () => {
+    const skeleton = document.getElementById('loading-skeleton');
+    if (skeleton) {
+        skeleton.style.display = 'grid';
     }
 };
 
-const hideSpinner = () => {
-    const spinner = document.getElementById('loading-spinner');
-    if (spinner) {
-        spinner.style.display = 'none';
+const hideSkeleton = () => {
+    const skeleton = document.getElementById('loading-skeleton');
+    if (skeleton) {
+        skeleton.style.display = 'none';
     }
 };
 
@@ -45,14 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.category-btn');
     const cards = document.querySelectorAll('.tool-card');
 
-    // Hide spinner initially
-    hideSpinner();
+    // Hide skeleton initially
+    hideSkeleton();
 
     // Add click event to each button
     buttons.forEach(button => {
         button.addEventListener('click', async function() {
-            // Show spinner
-            showSpinner();
+            // Show skeleton
+            showSkeleton();
             
             // Remove active class from all buttons
             buttons.forEach(btn => btn.classList.remove('active'));
@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             
-            // Hide spinner after filtering
-            hideSpinner();
+            // Hide skeleton after filtering
+            hideSkeleton();
         });
     });
 });

@@ -35,33 +35,8 @@
             </h1>
         </header>
 
-        <!-- Loading Spinner Container -->
-        <div id="loading-spinner" class="flex flex-col items-center justify-center space-y-4 mb-8">
-            <!-- Spinner Rings -->
-            <div class="relative w-20 h-20">
-                <!-- Outer pulsing ring -->
-                <div class="absolute inset-0 rounded-full border-8 border-blue-400/20 animate-[pulse_1.5s_ease-in-out_infinite]"></div>
-                
-                <!-- Middle spinning ring -->
-                <div class="absolute inset-0 rounded-full border-8 border-t-blue-500 border-r-blue-400 border-b-blue-300 border-l-transparent animate-[spin_1s_linear_infinite]"></div>
-                
-                <!-- Inner spinning dot -->
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="w-4 h-4 bg-blue-500 rounded-full animate-[ping_1s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
-                </div>
-            </div>
-            
-            <!-- Loading Text -->
-            <div class="text-blue-400 font-medium flex items-center space-x-1">
-                <span>Loading</span>
-                <span class="flex space-x-px">
-                    <span class="animate-[bounce_1s_infinite]">.</span>
-                    <span class="animate-[bounce_1s_infinite_0.2s]">.</span>
-                    <span class="animate-[bounce_1s_infinite_0.4s]">.</span>
-                </span>
-            </div>
-        </div>
-
+        
+       
         <nav class="category-nav bg-slate-800/50 backdrop-blur-md rounded-xl p-3 mb-8 border border-slate-700/50">
             <button class="category-btn active" data-category="all">All Tools</button>
             <button class="category-btn" data-category="coding">Coding</button>
@@ -73,6 +48,36 @@
             <button class="category-btn" data-category="productivity">Productivity</button>
             <button class="category-btn" data-category="framework">Frameworks & ML</button>
         </nav>
+
+         <!-- Skeleton Loading -->
+         <div id="loading-skeleton" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+            <!-- Skeleton Cards -->
+            <div class="skeleton-card" aria-hidden="true">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-type"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-desc"></div>
+            </div>
+            <div class="skeleton-card" aria-hidden="true">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-type"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-desc"></div>
+            </div>
+            <div class="skeleton-card" aria-hidden="true">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-type"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-desc"></div>
+            </div>
+            <div class="skeleton-card" aria-hidden="true">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-type"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-desc"></div>
+            </div>
+        </div>
+
 
         <div class="tools-grid">
             <!-- ChatGPT -->
@@ -214,7 +219,7 @@
             <!-- Anthropic -->
             <a href="https://anthropic.com" target="_blank" class="tool-card" data-categories="research,framework">
                 <div class="tool-type">AI Research</div>
-                <img src="images/Anthropic.png" alt="Anthropic" class="tool-image">
+                <img src="images/anthropic.png" alt="Anthropic" class="tool-image">
                 <h3 class="tool-name">Anthropic</h3>
                 <p class="tool-desc">Advanced AI research and development company.</p>
             </a>
@@ -360,6 +365,7 @@
                 <div class="tool-type">Research</div>
                 <img src="images/rabbit.png" alt="Research Rabbit" class="tool-image">
                 <h3 class="tool-name">Research Rabbit</h3>
+                <h3 class="tool-name">Research Rabbit</h3>
                 <p class="tool-desc">AI-powered literature discovery and mapping.</p>
             </a>
 
@@ -375,11 +381,18 @@
     </div>
 
     <footer>
-        <div>
-            <p>Designed by Dario George</p><br>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>Designed by Dario George</p>
+            </div>
+            <div class="footer-right">
+                <p id="refer">
+                    <a id="ref" href="mailto:edu.dariogeorge21@gmail.com">Email</a> | 
+                    <a href="https://github.com/dariogeorge21" target="_blank">GitHub</a> | 
+                    <a href="https://www.linkedin.com/in/dariogeorge21" target="_blank">LinkedIn</a>
+                </p>
+            </div>
         </div>
-        <div>
-            <p id="refer"><a id="ref" href="mailto:edu.dariogeorge21@gmail.com">Email </a> | <a href="https://github.com/dariogeorge21" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/dariogeorge21" target="_blank">LinkedIn</a></p></div>
     </footer>
     <script src="script.js"></script>
 </body>
